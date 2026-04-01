@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LENS — Camera Comparison Engine</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- LINKED CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-word">LENS</div>
+      <div class="logo-sub">Camera Comparison Engine · 80+ Cameras · 2014–2026</div>
+    </div>
+    <div class="header-meta">
+      <div>DATABASE VERSION <span>2026.1</span></div>
+      <div>CAMERAS INDEXED <span id="camera-count">—</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="selector-area">
+    <div class="section-label">Select Two Cameras to Compare</div>
+    <div class="selector-grid">
+
+      <!-- CAMERA A -->
+      <div class="selector-block">
+        <span class="selector-label">Camera A</span>
+        <div class="selector-wrapper">
+          <input type="text" class="selector-input" id="search-a" placeholder="Search brand or model…" autocomplete="off">
+          <div class="dropdown-list" id="dropdown-a"></div>
+        </div>
+        <div class="selected-camera-card" id="card-a">
+          <div>
+            <div class="selected-name" id="card-a-name"></div>
+            <div class="selected-meta" id="card-a-meta"></div>
+          </div>
+          <button class="clear-btn" onclick="clearCamera('a')">CLEAR</button>
+        </div>
+      </div>
+
+      <div class="vs-divider">
+        <div class="vs-circle">VS</div>
+      </div>
+
+      <!-- CAMERA B -->
+      <div class="selector-block">
+        <span class="selector-label">Camera B</span>
+        <div class="selector-wrapper">
+          <input type="text" class="selector-input" id="search-b" placeholder="Search brand or model…" autocomplete="off">
+          <div class="dropdown-list" id="dropdown-b"></div>
+        </div>
+        <div class="selected-camera-card" id="card-b">
+          <div>
+            <div class="selected-name" id="card-b-name"></div>
+            <div class="selected-meta" id="card-b-meta"></div>
+          </div>
+          <button class="clear-btn" onclick="clearCamera('b')">CLEAR</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="empty-state" class="empty-state">
+    <div class="icon">⬡</div>
+    <p><strong>Select two cameras above</strong> to generate a full side-by-side breakdown.</p>
+  </div>
+
+  <div id="comparison-result">
+    <div class="hero-cards" id="hero-cards"></div>
+    <div class="section-label">Category Wins</div>
+    <div class="win-tally" id="win-tally"></div>
+
+    <div class="comparison-section">
+      <div class="section-label">Full Specification Breakdown</div>
+      <div class="spec-table-wrapper">
+        <table class="spec-table">
+          <thead>
+            <tr class="header-row">
+              <th class="th-label">Specification</th>
+              <th class="th-a" id="th-a-name">Camera A</th>
+              <th class="th-b" id="th-b-name">Camera B</th>
+            </tr>
+          </thead>
+          <tbody id="spec-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-label">Camera Niches & Specialties</div>
+    <div class="niche-grid" id="niche-grid"></div>
+
+    <div class="section-label">Verdict</div>
+    <div class="verdict-box">
+      <div class="verdict-title">THE VERDICT</div>
+      <div class="verdict-text" id="verdict-text"></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>LENS COMPARISON ENGINE · <span>DATA ACCURATE AS OF 2026</span></footer>
+
+<!-- LINKED JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
